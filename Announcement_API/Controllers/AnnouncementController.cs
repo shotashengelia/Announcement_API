@@ -10,9 +10,6 @@ using AnnouncementDatabase;
 using Microsoft.AspNetCore.Http;
 
 
-//  need try catch !!! ------------------------------------------
-//  ერთ კონტროლერში არა იყოს ექშენები --------------------------
-
 namespace Announcement_API.Controllers
 {
     [Route("api/Announcement")]
@@ -65,12 +62,7 @@ namespace Announcement_API.Controllers
             {
                 return StatusCode(500, "Problem with handling Request!");
             }
-
-            //var AnnouncementToReturn = Mapper.Map<Get_Announcement>(AnnouncementEntity);
-
-            //return CreatedAtRoute("GetAnnouncement", new { id = AnnouncementToReturn.ID },
-            //                       AnnouncementToReturn);
-
+            
             return Save_Get_Announcement(AnnouncementEntity);
         }
 
@@ -100,7 +92,7 @@ namespace Announcement_API.Controllers
             }
             _AnnouncementRepository.DeleteAnnouncement(AnnouncementFromRepository);
 
-            if (_AnnouncementRepository.Save())                                              //....................................
+            if (_AnnouncementRepository.Save())                                            
             {
                 return StatusCode(500, "Problem with handling Request!");
             }
@@ -123,7 +115,7 @@ namespace Announcement_API.Controllers
 
                 _AnnouncementRepository.AddAnnouncement(AnnoucementToCreate);
 
-                if (_AnnouncementRepository.Save())                                    //....................................
+                if (_AnnouncementRepository.Save())                                    
                 {
                     return StatusCode(500, "Problem with handling Request!");
                 }
@@ -134,7 +126,7 @@ namespace Announcement_API.Controllers
 
             _AnnouncementRepository.UpdateAnnouncement(AnnouncementFromRepository);
 
-            if (_AnnouncementRepository.Save())                                         //.......................................                                            
+            if (_AnnouncementRepository.Save())                                                                                    
             {
                 return StatusCode(500, "Problem with handling Request!");
             }
