@@ -9,7 +9,7 @@ namespace AnnouncementDatabase.Context
     {
         public AnnouncementDbContext(DbContextOptions<AnnouncementDbContext> options) : base(options) { }
         
-        private DbSet<Announcement> Announcements { get; set; }             //must be public!!! 
+         public DbSet<Announcement> Announcements { get; set; }          
 
     }
 }

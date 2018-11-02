@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace AnnouncementDatabase
+namespace Announcement_API.Model
 {
-    public class Announcement
+    public class Update_Announcement
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
-
         [MaxLength(100)]
         [Required]
         public string Title { get; set; }
@@ -24,6 +20,7 @@ namespace AnnouncementDatabase
         public string ImageName { get; set; }
 
         [MaxLength(20)]
+        //    don't forget regular expression
         public string PhoneNumber { get; set; }
     }
 }
