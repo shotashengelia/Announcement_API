@@ -20,7 +20,6 @@ namespace Announcement_API.Model
         public string ImageName { get; set; }
 
         [MaxLength(20)]
-        //    don't forget regular expression
         public string PhoneNumber { get; set; }
     }
 }
